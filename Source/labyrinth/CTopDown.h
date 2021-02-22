@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "labyrinthGameModeBase.h"
 #include "Coin.h"
+#include "Damage.h"
 #include "CTopDown.generated.h"
 
 UCLASS()

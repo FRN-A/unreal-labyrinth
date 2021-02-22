@@ -21,4 +21,6 @@ void UGH_Controller::NativeTick(const FGeometry& geometry, float deltaTime)
 	FString scoreStr{ FString::FromInt(gameMode->score) };
 
 	scoreLabel->SetText(FText::FromString("Score: " + scoreStr));
+
+	lifeProgress->SetPercent((float)gameMode->life*0.01f);
 }

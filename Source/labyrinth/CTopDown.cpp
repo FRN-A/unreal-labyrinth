@@ -63,5 +63,14 @@ void ACTopDown::OnOverlap(AActor* self, AActor* other)
 		gameMode->score += coin->GetPoints();
 		other->Destroy();
 	}
+
+	if (other->ActorHasTag("Damage"))
+	{
+		AlabyrinthGameModeBase* gameMode = GetWorld()->GetAuthGameMode<AlabyrinthGameModeBase>();
+		ADamage* damage{ Cast<ADamage>(other) };
+
+		gameMode->life = gameMode->life - damage->GetDamage();
+		other->Destroy();
+	}
 }
 

@@ -6,6 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "labyrinthGameModeBase.h"
 #include "Components/TextBlock.h"
+#include "Components/ProgressBar.h"
 #include "GH_Controller.generated.h"
 
 /**
@@ -20,6 +21,9 @@ class LABYRINTH_API UGH_Controller : public UUserWidget
 
 	UPROPERTY(meta = (BindWidget))
 	UTextBlock* scoreLabel;
+
+	UPROPERTY(meta = (BindWidget))
+	UProgressBar* lifeProgress;
 
 	void NativeConstruct() override;
 	void NativeTick(const FGeometry& geometry, float deltaTime) override;

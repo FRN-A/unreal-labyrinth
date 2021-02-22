@@ -15,5 +15,9 @@ class LABYRINTH_API AlabyrinthGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 	
 public:
-	int score{};
+	UPROPERTY(EditAnywhere)
+	int score = 0;
+
+	UPROPERTY(EditAnywhere)
+	int life{};
 };
