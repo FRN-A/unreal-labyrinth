@@ -14,4 +14,6 @@ class LABYRINTH_API AlabyrinthGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+	int score{};
 };
