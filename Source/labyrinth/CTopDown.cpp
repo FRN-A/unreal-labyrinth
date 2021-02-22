@@ -24,6 +24,7 @@ void ACTopDown::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	AddMovementInput(*direction * moveSpeed * DeltaTime);
+	//AddMovementInput(GetActorForwardVector() * moveSpeed * DeltaTime);
 	SetActorRotation(FRotationMatrix::MakeFromX(directionSafe->GetSafeNormal()).Rotator());
 }
 
