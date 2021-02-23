@@ -29,3 +29,5 @@ int ACoin::GetPoints()
 {
 	return points;
 }
+
+// XD
