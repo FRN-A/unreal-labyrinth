@@ -29,3 +29,4 @@ int ACoin::GetPoints()
 {
 	return points;
 }
+//Fin del codigo
