@@ -24,6 +24,14 @@ class LABYRINTH_API UGH_Controller : public UUserWidget
 
 	UPROPERTY(meta = (BindWidget))
 	UProgressBar* lifeProgress;
+	
+	UPROPERTY(meta = (BindWidget))
+	UTextBlock* gameOverLabel;
+	
+	UPROPERTY(meta = (BindWidget))
+	UTextBlock* FinalScoreLabel;
+
+	float acum{0};
 
 	void NativeConstruct() override;
 	void NativeTick(const FGeometry& geometry, float deltaTime) override;

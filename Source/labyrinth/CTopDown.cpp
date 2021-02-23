@@ -3,6 +3,7 @@
 
 #include "CTopDown.h"
 #include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ACTopDown::ACTopDown()
@@ -74,4 +75,3 @@ void ACTopDown::OnOverlap(AActor* self, AActor* other)
 		other->Destroy();
 	}
 }
-

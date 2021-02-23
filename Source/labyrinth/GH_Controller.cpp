@@ -3,6 +3,9 @@
 
 #include "GH_Controller.h"
 #include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
+#include "GameFramework/Actor.h"
+#include "CTopDown.h"
 
 
 void UGH_Controller::NativeConstruct()
@@ -23,4 +26,28 @@ void UGH_Controller::NativeTick(const FGeometry& geometry, float deltaTime)
 	scoreLabel->SetText(FText::FromString("Score: " + scoreStr));
 
 	lifeProgress->SetPercent((float)gameMode->life*0.01f);
+
+	if (gameMode->score >= 100) {
+		FinalScoreLabel->SetText(FText::FromString("Score: " + scoreStr));
+		gameOverLabel->SetText(FText::FromString("You win"));
+		FinalScoreLabel->SetOpacity(1.f);
+		gameOverLabel->SetOpacity(1.f);
+		acum += deltaTime;
+		if (acum >= 3)
+		{
+			UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+		}
+	}
+	if (gameMode->life <= 0) {
+		FinalScoreLabel->SetText(FText::FromString("Score: " + scoreStr));
+		gameOverLabel->SetText(FText::FromString("Game Over"));
+		FinalScoreLabel->SetOpacity(1.f);
+		gameOverLabel->SetOpacity(1.f);
+		acum += deltaTime;
+		if (acum >= 3)
+		{
+			UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+		}
+	}
 }
+

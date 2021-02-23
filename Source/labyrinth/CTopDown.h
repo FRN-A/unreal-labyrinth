@@ -15,8 +15,8 @@ class LABYRINTH_API ACTopDown : public ACharacter
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere)
 	float moveSpeed{ 100.f };
-	FVector* direction{ new FVector() };
-	FVector* directionSafe{ new FVector() };
+	FVector* direction{ new FVector(0.0f,0.0f,0.0f) };
+	FVector* directionSafe{ new FVector(0.0f,0.0f,0.0f) };
 
 	void HorizontalAxis(float value);
 	void VerticalAxis(float value);
@@ -29,7 +29,6 @@ class LABYRINTH_API ACTopDown : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ACTopDown();
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
